@@ -45,6 +45,6 @@ public class ConversationService {
         List<ConversationViewDTO> conversationViewDTOs = conversations.stream()
                 .map(conversation -> modelMapper.map(conversation, ConversationViewDTO.class))
                 .collect(Collectors.toList());
-        return new SuccessDataResult<>(conversationViewDTOs, "Reviews found successfully.");
+        return new SuccessDataResult<>(conversationViewDTOs, "Conversations found successfully.");
     }
 }
