@@ -1,7 +1,7 @@
 package com.gamebuddy.chat.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,10 +14,10 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Conversation {
-
     @Id
-    @GeneratedValue
+    @Column(updatable = false, nullable = false)
     private String conversationId;
+
     private String user1Id;
     private String user2Id;
     private String lastMessage;
