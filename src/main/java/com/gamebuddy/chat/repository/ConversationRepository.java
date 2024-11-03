@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface ConversationRepository extends JpaRepository<Conversation, String> {
     List<Conversation> findByUser1IdOrUser2Id(String user1Id, String user2Id);
+    Conversation findByUser1IdAndUser2Id(String user1Id, String user2Id);
 }
