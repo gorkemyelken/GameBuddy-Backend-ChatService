@@ -30,10 +30,9 @@ public class ChatController {
     @MessageMapping("/sendMessage") // İstemciden gelen mesajları dinle
     @SendTo("/topic/messages") // Mesajların gönderileceği hedef
     public Message sendMessage(MessageCreateDTO messageCreateDTO) {
-        // Mesajı veritabanına kaydet
+
         DataResult<MessageViewDTO> result = messageService.sendMessage(messageCreateDTO);
 
-        // Mesajı döndür
-        return modelMapper.map(result.getData(), Message.class); // Mesajı döndürmek için uygun formatta
+        return modelMapper.map(result.getData(), Message.class);
     }
 }
